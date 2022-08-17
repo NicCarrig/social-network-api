@@ -1,0 +1,24 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "NoSQL Challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicCarrig/social-network-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicCarrig/social-network-api/issues"
+  },
+  "homepage": "https://github.com/NicCarrig/social-network-api#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2"
+  }
+}
