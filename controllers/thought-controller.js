@@ -36,13 +36,13 @@ const ThoughtController = {
             .then( ({ _id }) => {
                 return User.findOneAndUpdate(
                     { _id: body.userId },
-                    { $push: {thoughts: _id }},
+                    { $push: { thoughts: _id }},
                     { new: true }
                 );
             })
             .then(dbThoughtData => {
                 if(!dbThoughtData){
-                    res.status(404).json({ message: 'No thought with this ID'});
+                    res.status(404).json({ message: 'Error in thought creation'});
                     return;
                 }
                 res.json(dbThoughtData);
@@ -76,7 +76,8 @@ const ThoughtController = {
                 res.status(404).json({ message: 'No thought with this ID'});
                 return;
             }
-            res.json(dbThoughtData);
+            // res.json(dbThoughtData);
+            res.json({ message: 'Thought Deleted' })
         })
         .catch( err => res.json(err) );
     },
@@ -84,7 +85,7 @@ const ThoughtController = {
     addReaction({ params, body }, res){
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
-            { $push: { reaction: body }},
+            { $push: { reactions: body }},
             { new: true }
         )
             .then(dbThoughtData => {
